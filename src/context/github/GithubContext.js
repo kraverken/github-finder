@@ -14,8 +14,8 @@ export const GithubProvider = ({ children }) => {
 
   const [state, dispatch] = useReducer(GithubReducer, initialState); //dispatch is the the function name that takes in the type and data (dispatch===action)
 
-  //   Get inital users(testing)
-  const fetchUsers = async () => {
+  // Get Search results
+  const searchUsers = async () => {
     setLoading();
     const response = await fetch(`${GITHUB_URL}/users`, {
       headers: { Authorization: `token ${GITHUB_TOKEN}` },
