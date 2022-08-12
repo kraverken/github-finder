@@ -14,7 +14,11 @@ function User() {
   useEffect(() => {
     getUser(params.login);
     getUserRepos(params.login);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  /*to get rid of the warnings about getUser and getUserRepos as they are createdoutside this user.jsx we use this line(17 the commented one which actually runs while commented out)
+  React Hook useEffect has missing dependencies: 'getUser', 'getUserRepos', and 'params.login'. Either include them or remove the dependency array*/
 
   const {
     name,
